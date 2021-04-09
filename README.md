@@ -7,4 +7,4 @@ Extra Credit:
 None
 
 Screenshot:
-!(screenshot)[./screenshot_hw1.png]
+!(screenshot)[screenshot_hw1.png]
