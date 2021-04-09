@@ -3,8 +3,10 @@ Author: Coco Li
 
 T
 
-Extra Credit:
+**Extra Credit:**
+
 None
 
-Screenshot:
+**Screenshot:**
+
 !(screenshot)[screenshot_hw1.png]
