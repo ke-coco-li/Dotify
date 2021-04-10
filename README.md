@@ -1,7 +1,7 @@
 # Dotify
 Author: Coco Li
 
-T
+This is a simple music player that shows the user's username, the song's name, album picture, the artist's name, and the number of plays. It allows the user to change their usernames, and click the play&skip buttons with different feedback interactions.
 
 **Extra Credit:**
 
