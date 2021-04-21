@@ -4,56 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".PlayerActivity">
 
-    <TextView
-        android:id="@+id/username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="49dp"
-        android:text="first_avenger"
-        android:textSize="20dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/album"
-        app:layout_constraintEnd_toStartOf="@id/changeUser"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <TextView-->
+<!--        android:id="@+id/username"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:layout_marginBottom="49dp"-->
+<!--        android:text="first_avenger"-->
+<!--        android:textSize="20dp"-->
+<!--        android:visibility="visible"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/album"-->
+<!--        app:layout_constraintEnd_toStartOf="@id/changeUser"-->
+<!--        app:layout_constraintHorizontal_chainStyle="spread_inside"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
 
-    <EditText
-        android:id="@+id/etUsername"
-        android:layout_width="184dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="39dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/album"
-        app:layout_constraintEnd_toStartOf="@+id/changeUser"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+<!--    <EditText-->
+<!--        android:id="@+id/etUsername"-->
+<!--        android:layout_width="184dp"-->
+<!--        android:layout_height="41dp"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginEnd="31dp"-->
+<!--        android:layout_marginBottom="39dp"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:visibility="invisible"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/album"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/changeUser"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="1.0" />-->
 
-    <Button
-        android:id="@+id/changeUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="36dp"
-        android:text="CHANGE USER"
-        android:onClick="changeClicked"
-        app:layout_constraintBottom_toTopOf="@+id/album"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/username"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <Button-->
+<!--        android:id="@+id/changeUser"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginEnd="16dp"-->
+<!--        android:layout_marginBottom="36dp"-->
+<!--        android:text="CHANGE USER"-->
+<!--        android:onClick="changeClicked"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/album"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@id/username"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
