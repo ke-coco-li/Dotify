@@ -8,6 +8,7 @@ import android.widget.Toast
 import kotlin.random.Random
 import android.content.Context
 import android.content.Intent
+import android.view.MenuItem
 import com.ericchee.songdataprovider.Song
 import com.example.dotify.databinding.ActivityPlayerBinding
 
@@ -41,6 +42,21 @@ class PlayerActivity : AppCompatActivity() {
                 singer.text = currentSong.artist
             }
         }
+
+        var actionBar = supportActionBar
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true)
+        }
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
+        return super.onContextItemSelected(item)
     }
 
     fun prevClicked(view: View) {

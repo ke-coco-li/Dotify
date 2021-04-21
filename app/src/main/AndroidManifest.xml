@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PlayerActivity" />
+        <activity android:name=".PlayerActivity"
+            android:parentActivityName="com.example.dotify.SongListActivity"/>
     </application>
 
 </manifest>
