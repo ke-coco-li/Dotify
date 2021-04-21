@@ -5,7 +5,7 @@ This is a simple music player that allows user to see and shuffle a playlist of 
 
 **Extra Credit:**
 
-None
+1. Show a stock Android back arrow button in the Header/Toolbar of Activity B. When clicked, it should navigate back to SongListActivity (+.25)
 
 **Screenshot:**
 
