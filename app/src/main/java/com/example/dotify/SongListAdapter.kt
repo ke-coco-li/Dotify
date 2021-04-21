@@ -4,14 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ericchee.songdataprovider.Song
-import com.example.dotify.databinding.SongListBinding
+import com.example.dotify.databinding.SongItemBinding
 
 class SongListAdapter(private var songList: List<Song>): RecyclerView.Adapter<SongListAdapter.SongViewHolder>()  {
 
-    var onSongClickListener: (position: Int, name: Song) -> Unit = { _, _ ->  }
+    var onSongClickListener: (song: Song) -> Unit = { _ ->  }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SongViewHolder {
-        val binding = SongListBinding.inflate(LayoutInflater.from(parent.context))
+        val binding = SongItemBinding.inflate(LayoutInflater.from(parent.context))
         return SongViewHolder(binding)
     }
 
@@ -23,9 +23,11 @@ class SongListAdapter(private var songList: List<Song>): RecyclerView.Adapter<So
             songTitle.text = song.title
             artistName.text = song.artist
             itemRoot.setOnClickListener {
-                onSongClickListener(position, song)
+                onSongClickListener(song)
             }
         }
+
+//        holder.itemView.setOnClickListener { onSongClickListener(song) }
     }
 
     override fun getItemCount(): Int = songList.size
@@ -35,6 +37,6 @@ class SongListAdapter(private var songList: List<Song>): RecyclerView.Adapter<So
         notifyDataSetChanged()
     }
 
-    class SongViewHolder(val binding: SongListBinding): RecyclerView.ViewHolder(binding.root)
+    class SongViewHolder(val binding: SongItemBinding): RecyclerView.ViewHolder(binding.root)
 
 }
