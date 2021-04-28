@@ -11,12 +11,13 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/profilePic"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         tools:src="@drawable/spider_man" />
 
     <TextView
+        android:id="@+id/profileUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="User123456"
@@ -24,15 +25,22 @@
         android:layout_marginTop="10dp"/>
 
     <TextView
+        android:id="@+id/profileEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Email: user123456@gmail.com" />
 
     <TextView
+        android:id="@+id/profileJoinedDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Joined date: April 20, 2021" />
 
+    <TextView
+        android:id="@+id/profileIcecream"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Favorite ice cream: Vanilla" />
 
 </LinearLayout>
