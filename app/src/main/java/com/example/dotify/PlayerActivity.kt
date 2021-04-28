@@ -41,12 +41,19 @@ class PlayerActivity : AppCompatActivity() {
                 song.text = currentSong.title
                 singer.text = currentSong.artist
             }
+
+            settingsBtn.setOnClickListener{
+                navigateToSettingsActivity(this@PlayerActivity)
+            }
+
         }
 
         var actionBar = supportActionBar
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true)
         }
+
+
     }
 
     override fun onContextItemSelected(item: MenuItem): Boolean {

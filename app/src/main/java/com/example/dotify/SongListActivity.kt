@@ -34,7 +34,9 @@ class SongListActivity : AppCompatActivity() {
             adapter.onSongClickListener = { currentSong: Song ->
                 miniplayer.visibility = View.VISIBLE
                 miniSongTitle.text = "${currentSong.title} - ${currentSong.artist}"
-                miniplayer.setOnClickListener { navigateToPlayerActivity(this@SongListActivity, currentSong) }
+                miniplayer.setOnClickListener {
+                    navigateToPlayerActivity(this@SongListActivity, currentSong)
+                }
             }
 
         }
