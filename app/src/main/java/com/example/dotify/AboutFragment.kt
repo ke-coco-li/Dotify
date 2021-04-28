@@ -14,8 +14,9 @@ class AboutFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val binding = FragmentAboutBinding.inflate(inflater)
+        val version = BuildConfig.VERSION_NAME
         with(binding){
-
+            aboutVersion.text = "Version " + version
         }
         return binding.root
     }

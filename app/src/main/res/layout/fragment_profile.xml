@@ -14,7 +14,7 @@
         android:id="@+id/profilePic"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        tools:src="@drawable/spider_man" />
+        android:src="@drawable/spider_man" />
 
     <TextView
         android:id="@+id/profileUsername"

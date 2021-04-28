@@ -11,32 +11,30 @@ import androidx.navigation.fragment.navArgs
 
 
 class SettingsFragment : Fragment() {
-
+    private lateinit var binding: FragmentSettingsBinding
+    private val safeArgs: SettingsFragmentArgs by navArgs()
     private val navController by lazy { findNavController() }
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        val binding = FragmentSettingsBinding.inflate(inflater)
+            savedInstanceState: Bundle?)
+    : View? {
+
+        binding = FragmentSettingsBinding.inflate(inflater)
 
         with(binding) {
             profileBtn.setOnClickListener{
-                navController.navigate(R.id.profileFragment)
+                navController.navigate(SettingsFragmentDirections.actionGlobalProfileFragment())
             }
-
-            aboutBtn.setOnClickListener{
-                navController.navigate(R.id.aboutFragment)
+            aboutBtn.setOnClickListener {
+                navController.navigate(SettingsFragmentDirections.actionGlobalAboutFragment())
             }
-
             statisticsBtn.setOnClickListener{
-                navController.navigate(R.id.statisticsFragment)
+                navController.navigate(SettingsFragmentDirections.actionGlobalStatisticsFragment(safeArgs.songObj, safeArgs.playCount))
             }
-
         }
 
         return binding.root
     }
-
 }

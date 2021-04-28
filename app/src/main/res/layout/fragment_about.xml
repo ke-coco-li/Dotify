@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AboutFragment">
+    android:orientation="vertical"
+    tools:context=".AboutFragment"
+    android:gravity="center"
+    android:background="@color/azalea">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/aboutAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Author: Coco Li"
+        android:textSize="20dp" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/aboutVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Version" />
+
+    <TextView
+        android:id="@+id/aboutUniversity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="University of Washington" />
+
+    <TextView
+        android:id="@+id/aboutCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INFO 448 Mobile Development: Android" />
+
+</LinearLayout>

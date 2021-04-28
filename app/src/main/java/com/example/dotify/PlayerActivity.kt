@@ -32,6 +32,7 @@ class PlayerActivity : AppCompatActivity() {
 //        setContentView(R.layout.activity_main)
         val binding = ActivityPlayerBinding.inflate(layoutInflater).apply { setContentView(root) }
         val plays = findViewById<TextView>(R.id.plays)
+        val playCount = plays.toString()
         plays.text = randomNumber.toString() + " plays"
 
         with(binding) {
@@ -43,16 +44,15 @@ class PlayerActivity : AppCompatActivity() {
             }
 
             settingsBtn.setOnClickListener{
-                navigateToSettingsActivity(this@PlayerActivity)
+                if (currentSong != null) {
+                    navigateToSettingsActivity(this@PlayerActivity, currentSong, playCount)
+                }
             }
 
         }
 
         var actionBar = supportActionBar
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true)
-        }
-
+        actionBar?.setDisplayHomeAsUpEnabled(true)
 
     }
 
