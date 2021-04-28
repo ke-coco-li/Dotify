@@ -19,12 +19,13 @@ class StatisticsFragment : Fragment() {
     ): View? {
         binding = FragmentStatisticsBinding.inflate(inflater)
 
-        val currentSong = safeArgs.songObj
-        val songCount = safeArgs.playCount
+        val songObj = safeArgs.song
+        val playCount = safeArgs.count
+        val songName = safeArgs.song.title
 
         with(binding) {
-            statAlbum.setImageResource(currentSong.largeImageID)
-            statPlayCount.text = songCount
+            statAlbum.setImageResource(songObj.largeImageID)
+            statPlayCount.text = songName + " has been played " + playCount + " times"
         }
 
         return binding.root

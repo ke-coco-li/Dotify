@@ -13,6 +13,7 @@ import com.ericchee.songdataprovider.Song
 import com.example.dotify.databinding.ActivityPlayerBinding
 
 private const val SONG_KEY = "song"
+private const val PLAY_COUNT = "count"
 
 fun navigateToPlayerActivity(context: Context ,currentSong: Song) {
     val intent = Intent(context, PlayerActivity::class.java)
@@ -28,11 +29,19 @@ class PlayerActivity : AppCompatActivity() {
     private var randomNumber = Random.nextInt(1000, 100000)
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_main)
+
+        if (savedInstanceState != null) {
+            with(savedInstanceState) {
+                randomNumber = getInt(PLAY_COUNT, -1)
+            }
+        }
+
         val binding = ActivityPlayerBinding.inflate(layoutInflater).apply { setContentView(root) }
         val plays = findViewById<TextView>(R.id.plays)
-        val playCount = plays.toString()
+//        val playCount = plays.text.toString()
         plays.text = randomNumber.toString() + " plays"
 
         with(binding) {
@@ -45,7 +54,7 @@ class PlayerActivity : AppCompatActivity() {
 
             settingsBtn.setOnClickListener{
                 if (currentSong != null) {
-                    navigateToSettingsActivity(this@PlayerActivity, currentSong, playCount)
+                    navigateToSettingsActivity(this@PlayerActivity, currentSong, randomNumber.toString())
                 }
             }
 
@@ -54,6 +63,11 @@ class PlayerActivity : AppCompatActivity() {
         var actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putInt(PLAY_COUNT, randomNumber)
+        super.onSaveInstanceState(outState)
     }
 
     override fun onContextItemSelected(item: MenuItem): Boolean {

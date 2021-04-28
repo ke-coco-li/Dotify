@@ -10,7 +10,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 
 private const val SONG = "song"
-private const val PLAY_COUNT = "123"
+private const val PLAY_COUNT = "count"
 
 fun navigateToSettingsActivity(context: Context, songObj: Song, playCount : String) {
     val intent = Intent(context, SettingsActivity::class.java)

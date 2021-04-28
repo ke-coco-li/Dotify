@@ -11,6 +11,7 @@ import androidx.navigation.fragment.navArgs
 
 
 class SettingsFragment : Fragment() {
+
     private lateinit var binding: FragmentSettingsBinding
     private val safeArgs: SettingsFragmentArgs by navArgs()
     private val navController by lazy { findNavController() }
@@ -20,6 +21,9 @@ class SettingsFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?)
     : View? {
+
+        val songObj = safeArgs.song
+        val playCount = safeArgs.count
 
         binding = FragmentSettingsBinding.inflate(inflater)
 
@@ -31,7 +35,7 @@ class SettingsFragment : Fragment() {
                 navController.navigate(SettingsFragmentDirections.actionGlobalAboutFragment())
             }
             statisticsBtn.setOnClickListener{
-                navController.navigate(SettingsFragmentDirections.actionGlobalStatisticsFragment(safeArgs.songObj, safeArgs.playCount))
+                navController.navigate(SettingsFragmentDirections.actionGlobalStatisticsFragment(songObj, playCount))
             }
         }
 
