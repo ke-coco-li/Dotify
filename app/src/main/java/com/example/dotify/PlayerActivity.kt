@@ -51,7 +51,6 @@ class PlayerActivity : AppCompatActivity() {
                 song.text = currentSong.title
                 singer.text = currentSong.artist
             }
-
             settingsBtn.setOnClickListener{
                 if (currentSong != null) {
                     navigateToSettingsActivity(this@PlayerActivity, currentSong, randomNumber.toString())
