@@ -27,6 +27,7 @@ fun navigateToPlayerActivity(context: Context ,currentSong: Song) {
 class PlayerActivity : AppCompatActivity() {
 
     private var randomNumber = Random.nextInt(1000, 100000)
+    private val dotifyApp: DotifyApplication by lazy { application as DotifyApplication }
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
