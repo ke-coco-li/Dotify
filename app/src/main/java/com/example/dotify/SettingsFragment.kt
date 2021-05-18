@@ -35,7 +35,12 @@ class SettingsFragment : Fragment() {
                 navController.navigate(SettingsFragmentDirections.actionGlobalAboutFragment())
             }
             statisticsBtn.setOnClickListener{
-                navController.navigate(SettingsFragmentDirections.actionGlobalStatisticsFragment(songObj, playCount))
+                navController.navigate(
+                    SettingsFragmentDirections.actionGlobalStatisticsFragment(
+                        songObj,
+                        playCount
+                    )
+                )
             }
         }
 

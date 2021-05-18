@@ -14,6 +14,8 @@ class SongListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySongListBinding
     private lateinit var currentSong: Song
+    private val dotifyApp: DotifyApplication by lazy { application as DotifyApplication }
+//    private val dataRepository by lazy { dotifyApp.dataRepository }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +46,7 @@ class SongListActivity : AppCompatActivity() {
             adapter.onSongClickListener = { currentSong: Song ->
                 this@SongListActivity.currentSong = currentSong  // update local song object
                 toggleMiniplayer(currentSong)
+                dotifyApp.songManager.onSongSelected(currentSong)
             }
         }
 
