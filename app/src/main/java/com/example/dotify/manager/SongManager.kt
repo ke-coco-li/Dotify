@@ -1,4 +1,4 @@
-package com.example.dotify
+package com.example.dotify.manager
 
 import com.ericchee.songdataprovider.Song
 
