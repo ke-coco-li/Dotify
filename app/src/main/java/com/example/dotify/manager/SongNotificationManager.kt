@@ -12,7 +12,7 @@ class SongNotificationManager(context: Context) {
 
     fun getSongPeriodically() {
         if(isWorkRunningByTag()) {
-            workManager.cancelAllWorkByTag(NEW_SONG_TAG)
+            return
         }
 
         val request = PeriodicWorkRequestBuilder<SongNotificationWorker>(20, TimeUnit.MINUTES)
@@ -26,6 +26,10 @@ class SongNotificationManager(context: Context) {
             .build()
 
         workManager.enqueue(request)
+    }
+
+    fun stopSongPeriodically() {
+        workManager.cancelAllWorkByTag(NEW_SONG_TAG)
     }
 
     private fun isWorkRunningByTag(): Boolean {

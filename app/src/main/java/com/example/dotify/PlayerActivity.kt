@@ -12,7 +12,7 @@ import android.view.MenuItem
 import com.ericchee.songdataprovider.Song
 import com.example.dotify.databinding.ActivityPlayerBinding
 
-private const val SONG_KEY = "song"
+const val SONG_KEY = "song"
 private const val PLAY_COUNT = "count"
 
 fun navigateToPlayerActivity(context: Context ,currentSong: Song) {
@@ -27,12 +27,11 @@ fun navigateToPlayerActivity(context: Context ,currentSong: Song) {
 class PlayerActivity : AppCompatActivity() {
 
     private var randomNumber = Random.nextInt(1000, 100000)
-    private val dotifyApp: DotifyApplication by lazy { application as DotifyApplication }
+//    private val dotifyApp: DotifyApplication by lazy { application as DotifyApplication }
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
 
         if (savedInstanceState != null) {
             with(savedInstanceState) {
@@ -42,7 +41,6 @@ class PlayerActivity : AppCompatActivity() {
 
         val binding = ActivityPlayerBinding.inflate(layoutInflater).apply { setContentView(root) }
         val plays = findViewById<TextView>(R.id.plays)
-//        val playCount = plays.text.toString()
         plays.text = randomNumber.toString() + " plays"
 
         with(binding) {

@@ -6,7 +6,6 @@ import androidx.work.WorkerParameters
 import com.ericchee.songdataprovider.SongDataProvider
 import com.example.dotify.DotifyApplication
 
-
 class SongNotificationWorker (
     private val context: Context,
     workerParameters: WorkerParameters

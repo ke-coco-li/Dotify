@@ -12,6 +12,7 @@ import com.ericchee.songdataprovider.Song
 import com.example.dotify.PlayerActivity
 import com.example.dotify.R
 import kotlin.random.Random
+import com.example.dotify.SONG_KEY
 
 private const val NEW_SONG_CHANNEL_ID = "NEW_SONG_CHANNEL_ID"
 
@@ -27,13 +28,13 @@ class NotificationManager(
     fun publishSongNotification(song: Song) {
         val intent = Intent(context, PlayerActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            putExtra(NEW_SONG_CHANNEL_ID, song)
+            putExtra(SONG_KEY, song)
         }
 
         val pendingIntent: PendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
 
         val builder = NotificationCompat.Builder(context, NEW_SONG_CHANNEL_ID)
-            .setSmallIcon(R.drawable.beforeyougo)
+            .setSmallIcon(R.drawable.ic_baseline_music_note_24)
             .setContentTitle("${song.artist} just released a new song!!!")
             .setContentText("Listening to ${song.title} now on Dotify")
             .setContentIntent(pendingIntent)
@@ -49,7 +50,6 @@ class NotificationManager(
 
     private fun initNotificationChannels() {
         initNewSongChannel()
-
     }
 
     private fun initNewSongChannel() {

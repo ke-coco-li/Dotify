@@ -1,12 +1,14 @@
 package com.example.dotify
 
+import android.app.PendingIntent
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.example.dotify.databinding.ActivitySongListBinding
 import com.ericchee.songdataprovider.Song
 import com.ericchee.songdataprovider.SongDataProvider
-
 
 private const val CURRENT_SONG = "currentSong"
 
@@ -19,7 +21,6 @@ class SongListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_song_list)
         binding = ActivitySongListBinding.inflate(layoutInflater).apply { setContentView(root) }
         val rvSong = binding.songList
         val songList = SongDataProvider.getAllSongs()
